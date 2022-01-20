@@ -1,22 +1,30 @@
 const router = require('express').Router();
 
 const { Product } = require('../../src/db');
+const controller = require('../../controller/product.controller');
 
-router.get('/', async (req, res) => {
-    const product = await Product.findAll();
-    res.json(product);
-});
+router.get('/', controller.findAll);
 
-router.post('/', async (req, res) => {
-    const product = await Product.create(req.body);
-    res.json(product);
-});
+router.get('/:id', controller.findById)
 
-router.put('/:id', async (req, res) => {
-    await Product.update(req.body, {
+/*router.get('/:id', async (req, res) =>{
+    
+    
+   const product = await Product.findById({
         where: {id: req.params.id}
     });
-    res.json({ success: 'Se actualizo correctamente' });
-});
+    //const product = await Product.findAll({
+    //    where: {id: req.params.id},
+        //attributes: ['name']
+    //});
+    //res.json(product)
+    //res.json(product[0].name);
+    
+    
+})*/
+
+router.post('/', controller.post);
+
+router.put('/:id', controller.put);
 
 module.exports = router;
