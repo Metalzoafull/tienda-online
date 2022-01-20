@@ -1,6 +1,7 @@
-const Sequelize = require('sequelize');
+/*const Sequelize = require('sequelize');
 
 const ProductModel = require('../models/product');
+const CategoryModel = require('../models/category')
 
 
 const sequelize = new Sequelize('tiendaDB', 'root', '1234',{
@@ -9,6 +10,7 @@ const sequelize = new Sequelize('tiendaDB', 'root', '1234',{
 })
 
 const Product = ProductModel(sequelize, Sequelize);
+const Category = CategoryModel(sequelize, Sequelize);
 
 sequelize.sync({force: false})
 .then(() => {
@@ -16,5 +18,6 @@ sequelize.sync({force: false})
 })
 
 module.exports = {
+    Category,
     Product
-}
+}*/

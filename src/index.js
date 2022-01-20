@@ -4,7 +4,7 @@ const morgan = require('morgan');
 
 const apiRouter = require('../routes/api')
 
-require('./db');
+//require('./db');
 
 //seteo puerto
 app.set('port', process.env.PORT || 3001);
