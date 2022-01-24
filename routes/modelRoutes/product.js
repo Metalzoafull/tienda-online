@@ -2,8 +2,10 @@ const router = require('express').Router();
 
 //const { Product } = require('../../src/db');
 const controller = require('../../controller/product.controller');
+const verifyToken = require('../../libs/verifyToken');
 
-router.get('/', controller.findAll);
+
+router.get('/',verifyToken , controller.findAll);
 
 router.get('/:id', controller.findById)
 

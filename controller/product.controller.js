@@ -5,6 +5,7 @@ const productsModel = require('../models').product
 const controller = {}
 
 controller.findAll = async (req, res) => {
+    console.log("aqui no");
     const product = await productsModel.findAll();
     res.json(product);
 };
