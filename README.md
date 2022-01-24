@@ -1,1 +1,3 @@
 # tienda-online
+
+###comandos utilizados
