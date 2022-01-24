@@ -1,6 +1,8 @@
 const bcrypt = require('bcrypt');
 const res = require('express/lib/response');
 
+//este modulo se encarga de encriptar y validad la contraseña
+
 const encry = {};
 
 encry.encryptPassword = async (password) => {

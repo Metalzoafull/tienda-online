@@ -1,5 +1,6 @@
 const router = require('express').Router();
 
+//configurando las rutas del modelo category
 
 const controller = require('../../controller/category.controller');
 

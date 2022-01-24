@@ -15,7 +15,7 @@ controller.findById = async (req, res) => {
     const product = await productsModel.findAll({
         where: {id: iD}
     });
-    res.json(product)
+    res.json(product[0])
 };
 
 controller.post = async (req, res) => {
@@ -29,5 +29,17 @@ controller.put = async (req, res) => {
     });
     res.json({ success: 'Se actualizo correctamente' });
 };
+
+controller.delete = async (req, res) => {
+    const productId = req.params.id
+    const products = await productsModel.findAll({
+        where: {id: productId}
+    });
+    
+    products[0].destroy();
+
+    res.json("eliminacion exitosa");
+
+}
 
 module.exports = controller;
